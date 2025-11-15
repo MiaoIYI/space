@@ -1,49 +1,89 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safely redirect from github to domestic servers</title>
-
-    <!-- 禁用缓存的meta标签 -->
+    
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    </script>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 100px;
+            font-size: 64px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .baidu-button {
+            background: linear-gradient(135deg, rgba(255, 87, 34, 0.8), rgba(255, 152, 0, 0.8));
+        }
+
+        .sina-button {
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.8), rgba(156, 39, 176, 0.8));
+        }
+    </style>
 </head>
-
 <body>
-
-     &nbsp;
-    <!-- miao-tag1 -->
-    <a href="http://116.237.133.105:3003/"
-    style="
-        font-size: 32px;
-        color: #2563eb;
-        text-decoration: none;
-        transition: color 0.3s;
-    "
-    onmouseover="this.style.color='#dc2626'"
-    onmouseout="this.style.color='#2563eb'">
-    My web
-    </a>
-
-     &nbsp;&nbsp;
-    <!-- miao-tag2 -->
-    <a href="http://116.237.133.105:3000/"
-    style="
-        font-size: 32px;
-        color: #2563eb;
-        text-decoration: none;
-        transition: color 0.3s;
-    "
-    onmouseover="this.style.color='#dc2626'"
-    onmouseout="this.style.color='#2563eb'">
-    My git
-    </a>
-
+    <div class="button-container">
+        <!-- miao-tag1 -->
+        <a href="http://116.237.133.105:3003/" class="nav-button baidu-button" target="_blank">web</a>
+        <!-- miao-tag2 -->
+        <a href="http://116.237.133.105:3000/" class="nav-button sina-button" target="_blank">git</a>
+    </div>
 </body>
-
 </html>
+<code_end>
+
+
+<!-- miao-tag 注释是自动化脚本用来修改公网IP的标记 -->
